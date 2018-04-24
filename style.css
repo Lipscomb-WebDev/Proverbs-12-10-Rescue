@@ -15,7 +15,7 @@
 	list-style-type: none;
 	padding: 0;
 	margin: 0 auto;
-	width: 400px;
+	width: 440px; /* = (li_width + li_side_margin * 2) * li_count */
 }
 
 #menu:after {
@@ -26,9 +26,47 @@
 
 #menu li {
 	display: inline-block;
-	width: 100px;
+	width: 90px;
+	height: 35px;
+	padding-top: 7px;
 	text-align: center;
 	float: left;
+	background-color: lightgrey;
+	margin: 0 10px;
+	position: relative;
+
+	box-shadow: 0 3px 0 grey;
 }
 
+#menu li:hover {
+	box-shadow: none;
+	top: 3px;
+}
 
+#menu li a, #menu li a:visited {
+	text-decoration: none;
+	color: #222;
+}
+
+ul.dogs-column {
+	list-style-type: none;
+	padding: 0;
+	width: 40%;
+	float: left;
+	margin: 0 6.67%; /* 6.67% = (100% - (40% * 2)) / 3 */
+	margin-right: 0;
+}
+
+ul.dogs-column > li > img {
+	width: 100%;
+}
+
+.page-title {
+	text-align: center;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
